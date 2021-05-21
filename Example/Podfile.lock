@@ -1,0 +1,27 @@
+PODS:
+  - MVVMR (0.1.0)
+  - Nimble (8.0.9)
+  - Quick (2.2.1)
+
+DEPENDENCIES:
+  - MVVMR (from `../`)
+  - Nimble (~> 8.0.7)
+  - Quick (~> 2.2.0)
+
+SPEC REPOS:
+  trunk:
+    - Nimble
+    - Quick
+
+EXTERNAL SOURCES:
+  MVVMR:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MVVMR: e9c60bce33790ba310140403f179935f3fd57245
+  Nimble: 98b888285a615fd34f20e61753cf58ea1402bde4
+  Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
+
+PODFILE CHECKSUM: b14c742a15245a5898fe79e212b355ebd10ea7f9
+
+COCOAPODS: 1.10.1
