@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'MVVMR'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of MVVMR.'
+  s.summary          = 'MVVM Architecture + Router Base classes in SwiftUI.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,9 +28,9 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/guccyon/MVVMR.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '14.1'
 
-  s.source_files = 'MVVMR/Classes/**/*'
+  s.source_files = 'MVVMR/Sources/**/*'
   
   # s.resource_bundles = {
   #   'MVVMR' => ['MVVMR/Assets/*.png']
