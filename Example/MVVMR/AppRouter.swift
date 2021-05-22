@@ -27,7 +27,7 @@ final class AppRouter: RouterDelegate {
         case .root:
             let router = ParentRouter.createModule(parent: self)
             self.child = router
-            return router.destination()
+            return router.destination().embedInNavigationView()
         }
     }
 

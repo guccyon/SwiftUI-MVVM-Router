@@ -24,7 +24,15 @@ struct Navigation<Destination: View>: ViewModifier {
     }
 }
 
-extension View {
+struct EmbedInNavigationView: ViewModifier {
+    func body(content: Content) -> some View {
+        NavigationView {
+            content
+        }
+    }
+}
+
+public extension View {
     func navigation<VM: RoutableViewModel>(viewModel: VM) -> some View {
         let isActive = Binding(
             get: { viewModel.presentState.style == .push },
@@ -55,5 +63,9 @@ extension View {
         return self.sheet(isPresented: isPresented) {
             viewModel.router?.destination()
         }
+    }
+    
+    func embedInNavigationView() -> AnyView {
+        AnyView(modifier(EmbedInNavigationView()))
     }
 }

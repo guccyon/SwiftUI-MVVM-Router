@@ -1,5 +1,5 @@
 //
-//  ParentRouter.swift
+//  ChildRouter.swift
 //  MVVMR_Example
 //
 //  Created by Tetsuro Higuchi on 2021/05/22.
@@ -10,12 +10,10 @@ import Foundation
 import SwiftUI
 import MVVMR
 
-final class ParentRouter: RouterProtocol {
-    typealias ViewModel = ParentViewModel
+final class ChildRouter: RouterProtocol {
+    typealias ViewModel = ChildViewModel
 
-    enum Route {
-        case child
-    }
+    enum Route { }
 
     var parent: RouterDelegate?
     var child: Renderable?
@@ -29,21 +27,17 @@ final class ParentRouter: RouterProtocol {
 }
 
 // MARK: Renderer
-extension ParentRouter {
+extension ChildRouter {
     func destination() -> AnyView {
         switch state {
-        case .child:
-            let router = ChildRouter.createModule()
-            self.child = router
-            return router.destination()
         case .none:
-            return AnyView(ParentView(viewModel: self.viewModel))
+            return AnyView(ChildView(viewModel: self.viewModel))
         }
     }
 }
 
 // MARK: Factory
-extension ParentRouter {
+extension ChildRouter {
     static func createModule(parent: RouterDelegate? = nil) -> Self {
         let viewModel = ViewModel()
         let router = Self(parent: parent, viewModel: viewModel)

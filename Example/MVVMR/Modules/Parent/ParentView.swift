@@ -12,7 +12,14 @@ struct ParentView: View {
     @StateObject var viewModel: ParentViewModel
 
     var body: some View {
-        Text("ParentView")
+        VStack(spacing: 15) {
+            Text("ParentView")
+
+            Button("Show ChildView") {
+                viewModel.presentChild()
+            }            
+        }
+        .navigation(viewModel: viewModel)
     }
 }
 

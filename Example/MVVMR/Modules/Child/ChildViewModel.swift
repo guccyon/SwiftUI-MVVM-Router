@@ -1,5 +1,5 @@
 //
-//  ParentViewModel.swift
+//  ChildViewModel.swift
 //  MVVMR_Example
 //
 //  Created by Tetsuro Higuchi on 2021/05/22.
@@ -9,8 +9,8 @@
 import Foundation
 import MVVMR
 
-final class ParentViewModel: ViewModelProtocol {
-    typealias Router = ParentRouter
+final class ChildViewModel: ViewModelProtocol {
+    typealias Router = ChildRouter
     weak var router: Router?
     @Published var presentState = PresentState(style: .none)
 
@@ -20,22 +20,14 @@ final class ParentViewModel: ViewModelProtocol {
 }
 
 // MARK: - Binding
-extension ParentViewModel {
+extension ChildViewModel {
     func bind() {
     }
 }
 
 // MARK: - Dependency Injection
-extension ParentViewModel {
-
+extension ChildViewModel {
     func inject(router: Router) {
         self.router = router
-    }
-}
-
-// MARK: - Input
-extension ParentViewModel {
-    func presentChild() {
-        router?.present(route: .child)
     }
 }

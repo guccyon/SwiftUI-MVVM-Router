@@ -26,6 +26,12 @@ public protocol RouterProtocol: Renderable, RouterDelegate {
 
     var state: Route? { get set }
     var viewModel: ViewModel { get set }
+    
+    func present(route: Route, style: PresentStyle)
+    func open(_ url: URL)
+    func dismiss()
+    func presentModal(destination: () -> AnyView)
+    func dismissModal()
 }
 
 
@@ -57,7 +63,7 @@ public extension RouterProtocol {
 }
 
 // MARK: Router default
-extension RouterProtocol {
+public extension RouterProtocol {
     func present(route: Route, style: PresentStyle = .push) {
         switch style {
         case .modal:

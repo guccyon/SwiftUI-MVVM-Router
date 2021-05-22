@@ -19,6 +19,9 @@
 		97823BB9265885C0001E2D5A /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97823BB8265885C0001E2D5A /* ParentView.swift */; };
 		97823BBD265885CD001E2D5A /* ParentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97823BBC265885CD001E2D5A /* ParentViewModel.swift */; };
 		97823BC1265885D5001E2D5A /* ParentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97823BC0265885D5001E2D5A /* ParentRouter.swift */; };
+		97823BFF26588AEA001E2D5A /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97823BFE26588AEA001E2D5A /* ChildView.swift */; };
+		97823C0326588B0A001E2D5A /* ChildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97823C0226588B0A001E2D5A /* ChildViewModel.swift */; };
+		97823C0726588B14001E2D5A /* ChildRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97823C0626588B14001E2D5A /* ChildRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		97823BB8265885C0001E2D5A /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 		97823BBC265885CD001E2D5A /* ParentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewModel.swift; sourceTree = "<group>"; };
 		97823BC0265885D5001E2D5A /* ParentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRouter.swift; sourceTree = "<group>"; };
+		97823BFE26588AEA001E2D5A /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
+		97823C0226588B0A001E2D5A /* ChildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewModel.swift; sourceTree = "<group>"; };
+		97823C0626588B14001E2D5A /* ChildRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildRouter.swift; sourceTree = "<group>"; };
 		A1F7536B97F2701A20039EF7 /* Pods_MVVMR_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMR_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A88CE210FF47B213F3BA5CFC /* Pods-MVVMR_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMR_Example.release.xcconfig"; path = "Target Support Files/Pods-MVVMR_Example/Pods-MVVMR_Example.release.xcconfig"; sourceTree = "<group>"; };
 		AC8598622722FB1AA2AED743 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 		97823B8C26588216001E2D5A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				97823BFD26588AD1001E2D5A /* Child */,
 				97823BB7265885AD001E2D5A /* Parent */,
 			);
 			path = Modules;
@@ -185,6 +192,16 @@
 				97823BBC265885CD001E2D5A /* ParentViewModel.swift */,
 			);
 			path = Parent;
+			sourceTree = "<group>";
+		};
+		97823BFD26588AD1001E2D5A /* Child */ = {
+			isa = PBXGroup;
+			children = (
+				97823C0626588B14001E2D5A /* ChildRouter.swift */,
+				97823BFE26588AEA001E2D5A /* ChildView.swift */,
+				97823C0226588B0A001E2D5A /* ChildViewModel.swift */,
+			);
+			path = Child;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,8 +401,11 @@
 				97823B85265880D9001E2D5A /* ExampleApp.swift in Sources */,
 				97823BBD265885CD001E2D5A /* ParentViewModel.swift in Sources */,
 				97823BC1265885D5001E2D5A /* ParentRouter.swift in Sources */,
+				97823C0726588B14001E2D5A /* ChildRouter.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				97823BFF26588AEA001E2D5A /* ChildView.swift in Sources */,
 				97823BB9265885C0001E2D5A /* ParentView.swift in Sources */,
+				97823C0326588B0A001E2D5A /* ChildViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
