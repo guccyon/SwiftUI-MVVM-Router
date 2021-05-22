@@ -12,8 +12,12 @@ struct ChildView: View {
     @StateObject var viewModel: ChildViewModel
     
     var body: some View {
-        Text("Child View")
-            .navigationBarTitle("ChildView", displayMode: .inline)
+        VStack {
+            Text("Child View")
+
+            Button("Dismiss") { viewModel.router?.dismiss() }
+        }
+        .navigationBarTitle("ChildView", displayMode: .inline)
     }
 }
 

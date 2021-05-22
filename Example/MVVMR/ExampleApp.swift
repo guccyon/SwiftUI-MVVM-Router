@@ -12,11 +12,16 @@ import SwiftUI
 struct ExampleApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
-    let router = AppRouter()
+    @StateObject var router = AppRouter()
 
     var body: some Scene {
         WindowGroup {
-            router.destination()
+            ZStack {
+                router.destination()
+            }
+            .fullScreenCover(isPresented: $router.isModalPresented) {
+                router.modalContent
+            }
         }
     }
 }

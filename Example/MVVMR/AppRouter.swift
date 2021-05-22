@@ -10,17 +10,18 @@ import Foundation
 import SwiftUI
 import MVVMR
 
-final class AppRouter: RouterDelegate {
+final class AppRouter: RouterDelegate, ObservableObject {
     enum Route {
         case root
     }
 
     var parent: RouterDelegate?
     var child: Renderable?
+    
     @Published var current: Route = .root
-
     @Published var openedURL: URL?
     @Published var modalContent: AnyView?
+    @Published var isModalPresented: Bool = false
 
     func destination() -> AnyView {
         switch current {
@@ -40,9 +41,11 @@ final class AppRouter: RouterDelegate {
 
     func presentModal(destination: () -> AnyView) {
         modalContent = destination()
+        isModalPresented = true
     }
 
     func dismissModal() {
         modalContent = nil
+        isModalPresented = false
     }
 }

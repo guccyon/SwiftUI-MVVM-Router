@@ -17,7 +17,11 @@ struct ParentView: View {
 
             Button("Show ChildView") {
                 viewModel.presentChild()
-            }            
+            }
+            
+            Button("Show ChildView as modal") {
+                viewModel.presentChildAsModal()
+            }
         }
         .navigation(viewModel: viewModel)
     }

@@ -15,6 +15,7 @@ final class ParentRouter: RouterProtocol {
 
     enum Route {
         case child
+        case childModal
     }
 
     var parent: RouterDelegate?
@@ -33,9 +34,13 @@ extension ParentRouter {
     func destination() -> AnyView {
         switch state {
         case .child:
-            let router = ChildRouter.createModule()
+            let router = ChildRouter.createModule(parent: self)
             self.child = router
             return router.destination()
+        case .childModal:
+            let router = ChildRouter.createModule(parent: self)
+            self.child = router
+            return router.destination().embedInNavigationView()
         case .none:
             return AnyView(ParentView(viewModel: self.viewModel))
         }

@@ -38,4 +38,8 @@ extension ParentViewModel {
     func presentChild() {
         router?.present(route: .child)
     }
+    
+    func presentChildAsModal() {
+        router?.present(route: .childModal, style: .modal)
+    }
 }
