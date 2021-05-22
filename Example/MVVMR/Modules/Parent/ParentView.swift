@@ -22,8 +22,13 @@ struct ParentView: View {
             Button("Show ChildView as modal") {
                 viewModel.presentChildAsModal()
             }
+
+            Button("Show ChildView as sheet") {
+                viewModel.presentChildAsSheet()
+            }
         }
         .navigation(viewModel: viewModel)
+        .sheet(viewModel: viewModel)
     }
 }
 

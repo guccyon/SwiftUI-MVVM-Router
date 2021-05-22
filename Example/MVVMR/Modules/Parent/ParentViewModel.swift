@@ -40,6 +40,10 @@ extension ParentViewModel {
     }
     
     func presentChildAsModal() {
-        router?.present(route: .childModal, style: .modal)
+        router?.present(route: .child, style: .modal)
+    }
+
+    func presentChildAsSheet() {
+        router?.present(route: .child, style: .sheet)
     }
 }
