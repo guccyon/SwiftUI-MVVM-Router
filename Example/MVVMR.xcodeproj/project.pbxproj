@@ -10,11 +10,15 @@
 		013B91708A50F32E9138C6C7 /* Pods_MVVMR_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715FE6867FEB4514F70D9E19 /* Pods_MVVMR_Tests.framework */; };
 		2C792DE62AEF2C9F075A61D5 /* Pods_MVVMR_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F7536B97F2701A20039EF7 /* Pods_MVVMR_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		97823B85265880D9001E2D5A /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97823B84265880D9001E2D5A /* ExampleApp.swift */; };
+		97823B9D26588334001E2D5A /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97823B9C26588334001E2D5A /* AppRouter.swift */; };
+		97823BB9265885C0001E2D5A /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97823BB8265885C0001E2D5A /* ParentView.swift */; };
+		97823BBD265885CD001E2D5A /* ParentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97823BBC265885CD001E2D5A /* ParentViewModel.swift */; };
+		97823BC1265885D5001E2D5A /* ParentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97823BC0265885D5001E2D5A /* ParentRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +35,6 @@
 		607FACD01AFB9204008FA782 /* MVVMR_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMR_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -40,6 +43,11 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		715FE6867FEB4514F70D9E19 /* Pods_MVVMR_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMR_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		918BA6120EEEBD039684D134 /* Pods-MVVMR_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMR_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MVVMR_Tests/Pods-MVVMR_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		97823B84265880D9001E2D5A /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
+		97823B9C26588334001E2D5A /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		97823BB8265885C0001E2D5A /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
+		97823BBC265885CD001E2D5A /* ParentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewModel.swift; sourceTree = "<group>"; };
+		97823BC0265885D5001E2D5A /* ParentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentRouter.swift; sourceTree = "<group>"; };
 		A1F7536B97F2701A20039EF7 /* Pods_MVVMR_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMR_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A88CE210FF47B213F3BA5CFC /* Pods-MVVMR_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMR_Example.release.xcconfig"; path = "Target Support Files/Pods-MVVMR_Example/Pods-MVVMR_Example.release.xcconfig"; sourceTree = "<group>"; };
 		AC8598622722FB1AA2AED743 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -102,8 +110,10 @@
 		607FACD21AFB9204008FA782 /* Example for MVVMR */ = {
 			isa = PBXGroup;
 			children = (
+				97823B8C26588216001E2D5A /* Modules */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				97823B9C26588334001E2D5A /* AppRouter.swift */,
+				97823B84265880D9001E2D5A /* ExampleApp.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -157,6 +167,24 @@
 				BAE0218100937F6CF4405735 /* Pods-MVVMR_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		97823B8C26588216001E2D5A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				97823BB7265885AD001E2D5A /* Parent */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		97823BB7265885AD001E2D5A /* Parent */ = {
+			isa = PBXGroup;
+			children = (
+				97823BC0265885D5001E2D5A /* ParentRouter.swift */,
+				97823BB8265885C0001E2D5A /* ParentView.swift */,
+				97823BBC265885CD001E2D5A /* ParentViewModel.swift */,
+			);
+			path = Parent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,8 +380,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				97823B9D26588334001E2D5A /* AppRouter.swift in Sources */,
+				97823B85265880D9001E2D5A /* ExampleApp.swift in Sources */,
+				97823BBD265885CD001E2D5A /* ParentViewModel.swift in Sources */,
+				97823BC1265885D5001E2D5A /* ParentRouter.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				97823BB9265885C0001E2D5A /* ParentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
