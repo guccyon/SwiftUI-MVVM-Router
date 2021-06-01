@@ -12,12 +12,14 @@ public protocol RouterDelegate: class {
     var parent: RouterDelegate? { get }
     func open(_ url: URL)
     func dismiss()
-    func presentModal(destination: () -> AnyView)
+    func presentModal<Content: View>(modalContent: Content)
     func dismissModal()
 }
 
 public protocol Renderable {
-    func destination() -> AnyView
+    associatedtype Destination: View
+    @ViewBuilder
+    func destination() -> Destination
 }
 
 public protocol RouterProtocol: Renderable, RouterDelegate {
@@ -30,8 +32,6 @@ public protocol RouterProtocol: Renderable, RouterDelegate {
     func present(route: Route, style: PresentStyle)
     func open(_ url: URL)
     func dismiss()
-    func presentModal(destination: () -> AnyView)
-    func dismissModal()
 }
 
 
@@ -53,8 +53,8 @@ public extension RouterProtocol {
         }
     }
 
-    func presentModal(destination: () -> AnyView) {
-        parent?.presentModal(destination: destination)
+    func presentModal<Content: View>(modalContent: Content) {
+        parent?.presentModal(modalContent: modalContent)
     }
 
     func dismissModal() {
@@ -69,7 +69,7 @@ public extension RouterProtocol {
         case .modal:
             self.state = route
             self.viewModel.presentState = .init(style: style)
-            parent?.presentModal(destination: destination)
+            parent?.presentModal(modalContent: destination())
         default:
             self.state = route
             self.viewModel.presentState = .init(style: style)

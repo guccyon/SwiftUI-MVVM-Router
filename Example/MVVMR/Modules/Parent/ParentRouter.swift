@@ -18,7 +18,6 @@ final class ParentRouter: RouterProtocol {
     }
 
     var parent: RouterDelegate?
-    var child: Renderable?
     var viewModel: ViewModel
     var state: Route?
 
@@ -30,14 +29,14 @@ final class ParentRouter: RouterProtocol {
 
 // MARK: Renderer
 extension ParentRouter {
-    func destination() -> AnyView {
+    @ViewBuilder
+    func destination() -> some View {
         switch state {
         case .child:
             let router = ChildRouter.createModule(parent: self)
-            self.child = router
-            return router.destination()
+            router.destination()
         case .none:
-            return AnyView(ParentView(viewModel: self.viewModel))
+            ParentView(viewModel: self.viewModel)
         }
     }
 }

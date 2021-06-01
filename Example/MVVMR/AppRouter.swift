@@ -16,7 +16,6 @@ final class AppRouter: RouterDelegate, ObservableObject {
     }
 
     var parent: RouterDelegate?
-    var child: Renderable?
     
     @Published var current: Route = .root
     @Published var openedURL: URL?
@@ -27,7 +26,6 @@ final class AppRouter: RouterDelegate, ObservableObject {
         switch current {
         case .root:
             let router = ParentRouter.createModule(parent: self)
-            self.child = router
             return router.destination().embedInNavigationView()
         }
     }
@@ -39,8 +37,8 @@ final class AppRouter: RouterDelegate, ObservableObject {
     func dismiss() {
     }
 
-    func presentModal(destination: () -> AnyView) {
-        modalContent = destination()
+    func presentModal<Content: View>(modalContent: Content) {
+        self.modalContent = AnyView(modalContent)
         isModalPresented = true
     }
 
