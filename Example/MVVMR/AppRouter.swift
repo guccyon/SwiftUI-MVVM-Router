@@ -16,18 +16,27 @@ final class AppRouter: RouterDelegate, ObservableObject {
     }
 
     var parent: RouterDelegate?
+    var child: Renderable?
     
     @Published var current: Route = .root
     @Published var openedURL: URL?
     @Published var modalContent: AnyView?
     @Published var isModalPresented: Bool = false
 
-    func destination() -> AnyView {
+    init() {
+        child = createModule(for: current, parent: self)
+    }
+
+    func createModule(for route: Route, parent: RouterDelegate) -> Renderable? {
         switch current {
         case .root:
-            let router = ParentRouter.createModule(parent: self)
-            return router.destination().embedInNavigationView()
+            return ParentRouter.createModule(parent: parent)
         }
+    }
+
+    func destination() -> AnyView {
+        child?.destination().embedInNavigationView()
+            ?? AnyView(EmptyView())
     }
 
     func open(_ url: URL) {

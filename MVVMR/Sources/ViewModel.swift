@@ -22,6 +22,7 @@ public protocol ViewModelProtocol: RoutableViewModel, ObservableObject {
 extension RoutableViewModel {
     func dismissState() {
         router?.state = nil
+        router?.child = nil
         presentState = .init(style: .none)
     }
 }

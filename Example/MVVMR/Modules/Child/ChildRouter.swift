@@ -15,7 +15,8 @@ final class ChildRouter: RouterProtocol {
 
     enum Route { }
 
-    var parent: RouterDelegate?
+    weak var parent: RouterDelegate?
+    var child: Renderable?
     var viewModel: ViewModel
     var state: Route?
 
@@ -23,16 +24,21 @@ final class ChildRouter: RouterProtocol {
         self.parent = parent
         self.viewModel = viewModel
     }
+
+    func createModule(for route: Route) -> Renderable? {
+        nil
+    }
+
+    deinit {
+        print("deinit \(String(describing: type(of: self)))")
+    }
 }
 
 // MARK: Renderer
 extension ChildRouter {
     @ViewBuilder
-    func destination() -> some View {
-        switch state {
-        case .none:
-            ChildView(viewModel: self.viewModel)
-        }
+    func destination() -> AnyView {
+        AnyView(ChildView(viewModel: self.viewModel))
     }
 }
 

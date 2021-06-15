@@ -27,6 +27,9 @@ struct ParentView: View {
                 viewModel.presentChildAsSheet()
             }
         }
+        .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
+        .background(Color.yellow)
+        .navigationBarTitle("Parent", displayMode: .inline)
         .navigation(viewModel: viewModel)
         .sheet(viewModel: viewModel)
     }

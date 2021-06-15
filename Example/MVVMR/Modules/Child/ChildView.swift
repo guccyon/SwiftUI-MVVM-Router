@@ -17,6 +17,7 @@ struct ChildView: View {
 
             Button("Dismiss") { viewModel.router?.dismiss() }
         }
+        .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
         .navigationBarTitle("ChildView", displayMode: .inline)
     }
 }

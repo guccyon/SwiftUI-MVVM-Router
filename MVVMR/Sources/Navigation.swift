@@ -45,7 +45,7 @@ public extension View {
 
         let container = Navigation(
             isActive: isActive,
-            destination: { viewModel.router?.destination() }
+            destination: { viewModel.router?.renderer().destination() }
         )
 
         return modifier(container)
@@ -61,7 +61,7 @@ public extension View {
             }
         )
         return self.sheet(isPresented: isPresented) {
-            viewModel.router?.destination()
+            viewModel.router?.renderer().destination()
         }
     }
     
